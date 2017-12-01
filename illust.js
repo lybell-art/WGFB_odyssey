@@ -31,11 +31,14 @@ function setup()
 }
 function draw()
 {
-	img.copy(cam,0,0,width,height,0,0,width,height);
-    	var faces=detector.detect(img.canvas);
-//	gazer=slider.value();
-	gazer=constrain(faces.length,0,8);
-	console.log(gazer);
+	if(frameCount%60==0)
+	{
+		img.copy(cam,0,0,width,height,0,0,width,height);
+		var faces=detector.detect(img.canvas);
+	//	gazer=slider.value();
+		gazer=constrain(faces.length,0,8);
+		console.log(gazer);
+	}
 	var cha_ypos;
 	background(255);
 	image(bg,0,0);
