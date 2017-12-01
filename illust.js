@@ -36,6 +36,7 @@ function draw()
 		img.copy(cam,0,0,width,height,0,0,width,height);
 		var faces=detector.detect(img.canvas);
 	//	gazer=slider.value();
+		console.log(faces);
 		gazer=constrain(faces.length,0,8);
 		console.log(gazer);
 	}
