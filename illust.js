@@ -41,7 +41,7 @@ function grayTone()
 	{
 		var ras=gazer*20;
 		if(gazer>gazerBefore) this.pas=1;
-		else if(gazer<gazerBefore) this,pas=-1;
+		else if(gazer<gazerBefore) this.pas=-1;
 		if(ras!=this.ratio) this.ratio+=this.pas;
 		else this.pas=0;
 		return map(this.ratio,0,160,1,0);
