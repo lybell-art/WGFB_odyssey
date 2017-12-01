@@ -58,7 +58,7 @@ function graying(ratio)
 		for(var y=0;y<height;y++)
       		{
 		     	console.log(get(x,y),c.get(x,y),ratio);
-			res.set(x,y,lerpColor(get(x,y),c.get(x,y),ratio));
+			res.set(x,y,lerpColor(color(get(x,y)),color(c.get(x,y)),ratio));
 		}
 	}
 	image(res,0,0);
