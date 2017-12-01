@@ -53,9 +53,9 @@ function graying(ratio)
 	var c=get();
 	var res=createImage(width,height);
 	c.filter(GRAY);
-	for(int x=0;x<width;x++)
+	for(var x=0;x<width;x++)
 	{
-		for(int y=0;y<height;y++)
+		for(var y=0;y<height;y++)
       		{
 		     	res.set(x,y,lerpColor(get(x,y),c.get(x,y),ratio));
 		}
