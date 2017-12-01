@@ -23,7 +23,7 @@ function setup()
 	chara.before=millis();
 	slider=createSlider(0,8,1,1);
 	slider.position(10,10);
-	var scaleFactor=2.0;
+	var scaleFactor=1.0;
 	detector=new objectdetect.detector(width,height,scaleFactor, classifier);
 	cam=createCapture(VIDEO);
 	cam.size(width,height);
