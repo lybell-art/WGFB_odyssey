@@ -3,6 +3,7 @@ var chara;
 var face;
 var gazer=1;
 var gazerBefore=1;
+var calcul;
 var slider;
 function preload()
 {
@@ -16,6 +17,7 @@ function setup()
 	chara.before=millis();
 	slider=createSlider(0,8,1,1);
 	slider.position(10,10);
+	calcul=new grayTone();
 }
 function draw()
 {
@@ -27,7 +29,38 @@ function draw()
 	cha_ypos=chara.displayShuttle(1001,500);
 	face.sweep();
 	face.display(1001,500+cha_ypos);
+	graying(calcul.calculate());
 	gazerBefore=gazer;
+}
+
+function grayTone()
+{
+	this.ratio=20;
+	this.pas=0;
+	var calculate=function()
+	{
+		var ras=gazer*20;
+		if(gazer>gazerBefore) this.pas=1;
+		else if(gazer<gazerBefore) this,pas=-1;
+		if(ras!=this.ratio) this.ratio+=this.pas;
+		else this.pas=0;
+		return map(this.ratio,0,160,1,0);
+	}
+}
+
+function graying(ratio)
+{
+	var c=get();
+	var res=createImage(width,height);
+	c.filter(GRAY);
+	for(int x=0;x<width;x++)
+	{
+		for(int y=0;y<height;y++)
+      		{
+		     	res.set(x,y,lerpColor(get(x,y),c.get(x,y),ratio));
+		}
+	}
+	image(res,0,0);
 }
 
 function Animation(prefix, count)
