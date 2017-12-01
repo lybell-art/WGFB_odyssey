@@ -24,7 +24,7 @@ function setup()
 	slider=createSlider(0,8,1,1);
 	slider.position(10,10);
 	var scaleFactor=2.0;
-	detector=new objectdetect.detector(width,height,scaleFactor, classifier);
+	detector=new objectdetect.detector(w,h,scaleFactor, classifier);
 	cam=createCapture(VIDEO);
 	cam.size(w,h);
 	img=new p5.Image(w,h);
