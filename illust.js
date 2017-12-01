@@ -31,7 +31,7 @@ function setup()
 }
 function draw()
 {
-	if(frameCount%60<60)
+	if(frameCount%20<2)
 	{
 		img.copy(cam,0,0,width,height,0,0,width,height);
 		var faces=detector.detect(img.canvas);
