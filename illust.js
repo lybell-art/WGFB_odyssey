@@ -53,6 +53,7 @@ function graying(ratio)
 	var c=get();
 	var res=createImage(width,height);
 	c.filter(GRAY);
+	image(c,0,0);
 	for(var x=0;x<width;x++)
 	{
 		for(var y=0;y<height;y++)
