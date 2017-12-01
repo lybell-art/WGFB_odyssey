@@ -4,7 +4,6 @@ var face;
 var gazer=1;
 var gazerBefore=1;
 var slider;
-function setup() {
 function preload()
 {
 	bg = loadImage("source/background.png");
