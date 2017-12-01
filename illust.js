@@ -4,6 +4,13 @@ var face;
 var gazer=1;
 var gazerBefore=1;
 var slider;
+//face detect
+var detector;
+var classifier = objectdetect.frontalface;
+var cam;
+var w=640;
+var h=480;
+var img;
 function preload()
 {
 	bg = loadImage("source/background.png");
@@ -16,10 +23,19 @@ function setup()
 	chara.before=millis();
 	slider=createSlider(0,8,1,1);
 	slider.position(10,10);
+	var scaleFactor=2.0;
+	detector=new objectdetect.detector(width,height,scaleFactor, classifier);
+	cam=createCapture(VIDEO);
+	cam.size(width,height);
+	img=new p5.Image(width,height);
 }
 function draw()
 {
-	gazer=slider.value();
+	img.copy(cam,0,0,width,height,0,0,width,height);
+    	var faces=detector.detect(img.canvas);
+//	gazer=slider.value();
+	gazer=faces.length();
+	console.log(gazer);
 	var cha_ypos;
 	background(255);
 	image(bg,0,0);
