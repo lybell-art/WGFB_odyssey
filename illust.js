@@ -26,14 +26,14 @@ function setup()
 	var scaleFactor=2.0;
 	detector=new objectdetect.detector(width,height,scaleFactor, classifier);
 	cam=createCapture(VIDEO);
-	cam.size(width,height);
-	img=new p5.Image(width,height);
+	cam.size(w,h);
+	img=new p5.Image(w,h);
 }
 function draw()
 {
 	if(frameCount%60==0)
 	{
-		img.copy(cam,0,0,width,height,0,0,width,height);
+		img.copy(cam,0,0,w,h,0,0,w,h);
 		var faces=detector.detect(img.canvas);
 	//	gazer=slider.value();
 		console.log(faces);
