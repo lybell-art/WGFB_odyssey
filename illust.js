@@ -38,7 +38,7 @@ function Animation(prefix, count)
 		image(this.sprite[this.frame],x-this.width/2,y-this.height/2);
 		this.before=millis();
 	}
-  this.displayShutle=function(x,y)
+  this.displayShuttle=function(x,y)
   {
     this.frame=(this.frame+int((millis()-this.before)*this.fps/1000))%(this.imageCount*2);
     var real=this.frame;
