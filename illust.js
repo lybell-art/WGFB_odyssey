@@ -37,7 +37,7 @@ function grayTone()
 {
 	this.ratio=20;
 	this.pas=0;
-	var calculate=function()
+	this.calculate=function()
 	{
 		var ras=gazer*20;
 		if(gazer>gazerBefore) this.pas=1;
