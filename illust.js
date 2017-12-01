@@ -8,8 +8,8 @@ var slider;
 var detector;
 var classifier = objectdetect.frontalface;
 var cam;
-var w=640;
-var h=480;
+var w=320;
+var h=240;
 var img;
 function preload()
 {
