@@ -3,6 +3,8 @@ var chara;
 var face;
 var gazer=1;
 var gazerBefore=1;
+var slider;
+function setup() {
 function preload()
 {
 	bg = loadImage("source/background.png");
@@ -13,9 +15,12 @@ function setup()
 {
 	createCanvas(1400,900);
 	chara.before=millis();
+	slider=createSlider(0,8,1,1);
+	slider.position(10,10);
 }
 function draw()
 {
+	gazer=slider.value();
 	var cha_ypos;
 	background(255);
 	image(bg,0,0);
@@ -24,7 +29,6 @@ function draw()
 	face.sweep();
 	face.display(1001,500+cha_ypos);
 	gazerBefore=gazer;
-	
 }
 
 function Animation(prefix, count)
