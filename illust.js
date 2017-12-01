@@ -34,7 +34,7 @@ function draw()
 	img.copy(cam,0,0,width,height,0,0,width,height);
     	var faces=detector.detect(img.canvas);
 //	gazer=slider.value();
-	gazer=faces.length();
+	gazer=faces.length;
 	console.log(gazer);
 	var cha_ypos;
 	background(255);
