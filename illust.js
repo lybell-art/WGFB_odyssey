@@ -85,7 +85,7 @@ function Face(prefix)
 	}
 	this.sweep=function()
 	{
-		var p==gazer-gazerBefore;
+		var p=gazer-gazerBefore;
 		if(p>0) p=1;
 		else if(p<0) p=-1;
 		else p=0;
