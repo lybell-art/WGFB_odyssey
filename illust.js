@@ -3,7 +3,7 @@ var chara;
 var face;
 var gazer=1;
 var gazerBefore=1;
-var slider;
+//var slider;
 //face detect
 var detector;
 var classifier = objectdetect.frontalface;
@@ -21,8 +21,8 @@ function setup()
 {
 	createCanvas(1400,900);
 	chara.before=millis();
-	slider=createSlider(0,8,1,1);
-	slider.position(10,10);
+//	slider=createSlider(0,8,1,1);
+//	slider.position(10,10);
 	var scaleFactor=2.0;
 	detector=new objectdetect.detector(w,h,scaleFactor, classifier);
 	cam=createCapture(VIDEO);
